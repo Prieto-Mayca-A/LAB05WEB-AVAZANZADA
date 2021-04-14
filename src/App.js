@@ -1,7 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import Course from './components/Course';
+import Header from './components/Header';
+import Part from './components/Part';
+import Content from './components/Content';
+
 
 function App() {
+  
   return (
     <div className="App">
       <header className="App-header">
