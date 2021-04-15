@@ -2,19 +2,24 @@ import React, { useState } from 'react'
 
 const App = () => {
   const [ persons, setPersons ] = useState([
-    { name: 'Arto Hellas' }
+    { name: 'Arto Hellas', number: 953467346 }
   ]) 
+
   const [ newName, setNewName ] = useState('')
+  const [ newNumber, setNewNumber ] = useState('')
 
   const eventoName = (event) => {
     setNewName(event.target.value)
+  }
+  const eventoNumero = (event) => {
+    setNewNumber(event.target.value)
   }
 
   const eventoClick = (event) => {
     
 
     event.preventDefault()
-    const personarepe = {name: newName}
+    const personarepe = {name: newName, number:newNumber}
     setPersons(
       [...persons, personarepe]
       )
@@ -40,9 +45,13 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
-      <form>
+      <form onSubmit={eventoClick}>
         <div>
           name: <input type="text" value={newName} onChange={eventoName} />
+          <p></p>
+        </div>
+        <div>
+          name: <input type="text" value={newNumber} onChange={eventoNumero} />
           <p></p>
         </div>
         <div>
@@ -52,7 +61,7 @@ const App = () => {
       <h2>Numbers</h2>
       <h2>Los names de todas las personas:</h2>
           <p></p>
-          {persons.map((personanueva,index) => {return(<li key={index}>{personanueva.name}</li>)})}
+          {persons.map((personanueva,index) => {return(<li key={index}>{personanueva.name} ----- {personanueva.number}</li>)})}
     </div>
   );
 }
