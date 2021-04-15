@@ -1,6 +1,8 @@
-const header = (props) => {
+const Header = (props) => {
     return (
-        <h1>{props.course.name}</h1>
-        );
-    }
-    export default header;
+    <div>
+        <h1>{props.header}</h1>
+    </div>
+    );
+}
+export default Header;  
